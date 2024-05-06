@@ -9,8 +9,15 @@ btn.addEventListener("click", async ()=>{
 
 
 async function getImg() {
+   try{
     let res= await axios.get(url);
     console.log(res.data[0].url);
     return res.data[0].url;
+   }
+
+   catch(error){
+    console.log("Error is caught",error);
+    return "/";
+   }
     
 }
